@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://testingcf.jsdelivr.net/gh/StageDog/tavern_sync/dist/schema/character.zh.json
 # 银月脉纪 · 七〇七号别墅日常卡
 # 世界模拟型 · 第三人称 · 无主视角
-头像: null
+头像: 头像.png
 版本: '0.1'
 作者: BaiMeow
 备注: 银月脉纪世界观的707号别墅日常场域卡。叙事第三人称，用户在家庭场域中自由行动。
