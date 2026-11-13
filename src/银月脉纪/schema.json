@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$已初始化": {
+      "default": false,
+      "type": "boolean"
+    },
+    "时间": {
+      "type": "object",
+      "properties": {
+        "日期": {
+          "default": "八月二十三日",
+          "type": "string"
+        },
+        "星期": {
+          "default": "星期六",
+          "type": "string"
+        },
+        "时段": {
+          "default": "傍晚",
+          "type": "string",
+          "enum": [
+            "早晨",
+            "上午",
+            "午后",
+            "傍晚",
+            "夜晚",
+            "深夜"
+          ]
+        },
+        "月相": {
+          "default": "十一夜",
+          "type": "string"
+        },
+        "天气": {
+          "default": "晴",
+          "type": "string"
+        },
+        "气温": {
+          "default": "29°",
+          "type": "string"
+        },
+        "学期": {
+          "default": "暑假",
+          "type": "string"
+        }
+      }
+    },
+    "角色": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "图标": {
+            "default": "🧝",
+            "type": "string"
+          },
+          "身份": {
+            "default": "",
+            "type": "string"
+          },
+          "醒着": {
+            "default": true,
+            "type": "boolean"
+          },
+          "位置": {
+            "default": "",
+            "type": "string"
+          },
+          "活动": {
+            "default": "",
+            "type": "string"
+          },
+          "心情": {
+            "default": "平常",
+            "type": "string"
+          },
+          "健康": {
+            "default": "健康",
+            "type": "string"
+          },
+          "今日": {
+            "default": "",
+            "type": "string"
+          },
+          "存在天数": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "家计": {
+      "type": "object",
+      "properties": {
+        "持有金额": {
+          "default": 486200,
+          "type": "number"
+        },
+        "本月进项": {
+          "default": 180000,
+          "type": "number"
+        },
+        "进项名目": {
+          "default": "S.C.B观察配合费",
+          "type": "string"
+        },
+        "本月支出": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "支出备注": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "物品": {
+      "type": "object",
+      "properties": {
+        "晓光": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "晓月": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "白霜": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "主人": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "库存": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "图标": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "状态": {
+                "$ref": "#/$defs/__schema3"
+              },
+              "位置": {
+                "$ref": "#/$defs/__schema4"
+              },
+              "描述": {
+                "$ref": "#/$defs/__schema5"
+              },
+              "余量": {
+                "default": 100,
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "余量描述": {
+                "default": "",
+                "type": "string"
+              }
+            },
+            "required": [
+              "名称"
+            ]
+          }
+        }
+      }
+    },
+    "家庭": {
+      "type": "object",
+      "properties": {
+        "今日标题": {
+          "default": "今天很平常",
+          "type": "string"
+        },
+        "今日摘要": {
+          "default": "",
+          "type": "string"
+        },
+        "来客": {
+          "default": "无来客",
+          "type": "string"
+        },
+        "今日花瓶": {
+          "default": "向日葵",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "时间",
+    "家计",
+    "物品",
+    "家庭"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "名称": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "图标": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "状态": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "位置": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "描述": {
+          "$ref": "#/$defs/__schema5"
+        }
+      },
+      "required": [
+        "名称"
+      ]
+    },
+    "__schema1": {
+      "type": "string"
+    },
+    "__schema2": {
+      "default": "📦",
+      "type": "string"
+    },
+    "__schema3": {
+      "default": "收着",
+      "type": "string"
+    },
+    "__schema4": {
+      "default": "",
+      "type": "string"
+    },
+    "__schema5": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}
