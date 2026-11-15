@@ -10,6 +10,7 @@
       - move
     - don't update field names starts with `_` as they are readonly, such as `_变量`
     - if nothing meaningful changed in this reply (e.g. pure chat with no scene progression), output an empty JSONPatch array
+    - after the UpdateVariable block, on a new line, output the literal placeholder `<StatusPlaceHolderImpl/>` — it is the status-bar rendering anchor required on every reply
   format: |-
     <UpdateVariable>
     <Analysis>$(IN ENGLISH, no more than 80 words)
